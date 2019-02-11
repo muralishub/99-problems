@@ -1,9 +1,7 @@
 import scala.annotation.tailrec
 
 object P11 {
-
   def encodeModified[A](list: List[A]): List[Any] = {
-
     @tailrec
     def loop(list: List[A], inc: List[Any]): List[Any] = {
       list match {
@@ -15,6 +13,5 @@ object P11 {
     }
     loop(list, Nil)
   }
-
 }
 
