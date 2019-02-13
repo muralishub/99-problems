@@ -20,6 +20,7 @@ object NoOfFilesInDirectory {
         case Nil => count
       }
     }
+
     if(file.isDirectory)
     loopDirectory(innerFiles(file), 0)
     else 0
