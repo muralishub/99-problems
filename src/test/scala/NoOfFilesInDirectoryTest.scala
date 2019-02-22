@@ -13,4 +13,14 @@ class NoOfFilesInDirectoryTest extends FunSpec {
 
   }
 
+  it("test") {
+
+    val l = List(List(1, 2))
+
+    println(l.foreach(x => x.foreach(y => (x, y))))
+
+
+
+  }
+
 }

@@ -8,41 +8,49 @@ class FamilyGame{
 
 object FamilyGame {
 
-  def deck: Stream[(Shape.type , Color.type , Number.type , Shading.type)] = {
+  def deck: List[Card] = {
 
     val shape = Stream(Shape.ovals, Shape.squiggles, Shape.diamonds)
     val color = Stream(Color.red, Color.purple, Color.green)
     val number = Stream(Number.one, Number.two, Number.three)
     val shading = Stream(Shading.solid, Shading.striped, Shading.outlined)
 
-      for {
+    (for {
       s <- shape
       c <- color
       n <- number
       sh <- shading
-    } yield (s, c, n, sh)
-}
-
-  def move(currentCards: Seq[(Shape.type , Color.type , Number.type , Shading.type)]): Int = currentCards match {
-    case Nil => 0
-    case first :: second :: third :: list if(first._1 == second._1) =>
+    } yield (Card(s, c, n, sh))).toList
   }
 
 
-  def validSet(setofThree: Seq[(Shape.type, Color.type, Number.type, Shading.type)]): Boolean = {
-    setofThree match {
-      case first :: second :: three :: Nil if first._1 == second._1 && first._1 == three._1 => ???
-    }
-  }
-
-
-
-
+  def move(setOfTwelve: List[Card]): (Int, List[Card]) = ??? //{
+  //
+  //    def loop(score: Int, list: List[Card], feature: List[Feature]): (Int, List[Card]) = {
+  ////    list match {
+  ////      case x :: y :: xs if(x.shape == y.shape) => {
+  ////        if(x.shape == xs.head.shape) {
+  ////          // second feature
+  ////        }
+  ////        else {
+  ////          loop(0, x :: y :: xs.tail, )
+  ////        }
+  ////      }
+  //
+  //      case Nil => ???
+  //   //   }
+  // //   }
+  //   // loop(0, setOfTwelve, List(Shape, Color, Number, Shading) )
+  //  }
+  //}
 }
 
 case class Set(first: Card, second: Card, third: Card)
 
 case class Card(shape: String, color: String, number: String, shading: String)
+
+
+
 
 
 
