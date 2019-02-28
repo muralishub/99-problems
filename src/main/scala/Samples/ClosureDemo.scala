@@ -2,24 +2,13 @@ package Samples
 
 
 
-object ClosureDemo extends App{
+object ClosureDemo extends App {
 
-val hello = "murali"
+  val s = Article("test")
+  val s2 = Article("test")
 
-
-
-
-
-
-
+println(s == s2)
 
 }
 
-
-
-object Hello {
-  val greeting  =  Hello
-  def sayHello(f: String => Unit, name: String) =  f(name)
-
-
-}
+case class Article(name: String)
