@@ -4,5 +4,6 @@ object P01 {
     case head :: Nil  => head
     case head :: tail => findLast(tail)
     case Nil          => throw new NoSuchElementException
+    
   }
 }
